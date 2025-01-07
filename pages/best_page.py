@@ -8,31 +8,15 @@ st.title("인기있는 자동차!")
 # sql 계정
 connection = mysql.connector.connect(
     host="localhost",
-    user="squirrel",
-    password="squirrel",
-    database="car_data_brand"
+    user="root",
+    password="1234",
+#    database="car_data_brand"
 )
 
 cursor = connection.cursor()
 cursor.execute("SELECT AUTOMB_NM FROM test")
 
 data = cursor.fetchall()
-
-# def count_frequency(data):
-#     counter = Counter(data)
-    
-#     sorted_items = counter.most_common(50)
-
-    
-#     cnt = 1
-#     for item, count in sorted_items:
-#         car_name = str(item).replace('"', '').replace('(', '').replace(')', '').replace(',', '').replace("'", '')
-#         st.write(f"{cnt}위 {car_name} - {count}대")
-#         cnt += 1
-    
-#     return sorted_items
-
-# st.bar_chart(data.set_index('캐릭터')['선택횟수'])
 
 def count_frequency(data):
     # Counter로 빈도수 계산
@@ -42,7 +26,7 @@ def count_frequency(data):
     # DataFrame 생성
     df = pd.DataFrame(sorted_items, columns=['차량명', '대수'])
     
-    # 차량명 클리닝
+    # 차량명 클리닝 - 옆에꺼 없애는 용도
     df['차량명'] = df['차량명'].apply(lambda x: str(x).replace('"', '').replace('(', '').replace(')', '').replace(',', '').replace("'", ''))
     
     # 순위 표시
@@ -60,7 +44,7 @@ def count_frequency(data):
     
     return df
 
-# 사용 예시
+# 함수 생성
 count_frequency(data)
 
 if st.button(f'메인으로'):

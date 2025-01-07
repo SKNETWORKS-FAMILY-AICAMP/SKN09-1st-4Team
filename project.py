@@ -80,7 +80,7 @@ st.markdown(
     """
     <style>
         .stApp {
-            background-color: #444444;
+            background-color: #000000;
         }
     </style>
     """,
@@ -119,4 +119,3 @@ with col8[0]:
     if st.button(f'FAQ', use_container_width=True):
             st.switch_page("pages/FAQ_page.py")
 
-     
