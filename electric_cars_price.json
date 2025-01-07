@@ -1,0 +1,97 @@
+[
+    {
+        "title": "EV3",
+        "brand_name": "기아",
+        "price": 3995
+    },
+    {
+        "title": "더 뉴 아이오닉 5",
+        "brand_name": "현대",
+        "price": 4700
+    },
+    {
+        "title": "캐스퍼 일렉트릭",
+        "brand_name": "현대",
+        "price": 2740
+    },
+    {
+        "title": "EV6",
+        "brand_name": "기아",
+        "price": 5260
+    },
+    {
+        "title": "EV9",
+        "brand_name": "기아",
+        "price": 7337
+    },
+    {
+        "title": "아이오닉 6",
+        "brand_name": "현대",
+        "price": 4695
+    },
+    {
+        "title": "레이 EV",
+        "brand_name": "기아",
+        "price": 2735
+    },
+    {
+        "title": "포터2 일렉트릭",
+        "brand_name": "현대",
+        "price": 4395
+    },
+    {
+        "title": "GV60",
+        "brand_name": "제네시스",
+        "price": 6433
+    },
+    {
+        "title": "봉고 3 EV",
+        "brand_name": "기아",
+        "price": 4315
+    },
+    {
+        "title": "아이오닉 5 N",
+        "brand_name": "현대",
+        "price": 7700
+    },
+    {
+        "title": "Electrified G80",
+        "brand_name": "제네시스",
+        "price": 8490
+    },
+    {
+        "title": "디 올 뉴 코나 일렉트릭",
+        "brand_name": "현대",
+        "price": 4142
+    },
+    {
+        "title": "넥쏘",
+        "brand_name": "현대",
+        "price": 7320
+    },
+    {
+        "title": "Electrified GV70",
+        "brand_name": "제네시스",
+        "price": 7332
+    },
+    {
+        "title": "ST1",
+        "brand_name": "현대",
+        "price": 5595
+    },
+    {
+        "title": "니로 EV",
+        "brand_name": "기아",
+        "price": 4855
+    },
+    {
+        "title": "니로 플러스",
+        "brand_name": "기아",
+        "price": 4600
+    },
+    {
+        "title": "카운티 일렉트릭",
+        "brand_name": "현대",
+        "price": 19984
+    }
+]
