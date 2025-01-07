@@ -1,58 +1,23 @@
 import streamlit as st
+import json
+from PIL import Image
+
+
+with open('electric_cars_.json', 'r', encoding='utf-8') as f:
+    car_info = json.load(f)
 
 # 전기차 예외처리
 def is_search():
-    
-    # 차 종류
-    if '레이' in st.session_state.my_data:
-        st.switch_page("pages/data_page.py")
-    if '아이오닉' in st.session_state.my_data:
-        st.switch_page("pages/data_page.py")
-    if 'ZOE' in st.session_state.my_data:
-        st.switch_page("pages/data_page.py")
-    if '코나' in st.session_state.my_data:
-        st.switch_page("pages/data_page.py")
-    if '봉고' in st.session_state.my_data:
-        st.switch_page("pages/data_page.py")
-    if '니로' in st.session_state.my_data:
-        st.switch_page("pages/data_page.py")
-    if '쏘울' in st.session_state.my_data:
-        st.switch_page("pages/data_page.py")
-    if 'SM3' in st.session_state.my_data:
-        st.switch_page("pages/data_page.py")
-    if 'EV6' in st.session_state.my_data:
-        st.switch_page("pages/data_page.py")
-    if st.session_state.my_data == '레이':
-        st.switch_page("pages/data_page.py")
-    if st.session_state.my_data == '레이':
-        st.switch_page("pages/data_page.py")
-    if st.session_state.my_data == '레이':
-        st.switch_page("pages/data_page.py")
-    if st.session_state.my_data == '레이':
-        st.switch_page("pages/data_page.py")
-    if st.session_state.my_data == '레이':
-        st.switch_page("pages/data_page.py")
-    if st.session_state.my_data == '레이':
-        st.switch_page("pages/data_page.py")
-    if st.session_state.my_data == '레이':
-        st.switch_page("pages/data_page.py")
-    if st.session_state.my_data == '레이':
-        st.switch_page("pages/data_page.py")
-    if st.session_state.my_data == '레이':
-        st.switch_page("pages/data_page.py")
-    if st.session_state.my_data == '레이':
-        st.switch_page("pages/data_page.py")
-    if st.session_state.my_data == '레이':
-        st.switch_page("pages/data_page.py")
-    if st.session_state.my_data == '레이':
-        st.switch_page("pages/data_page.py")
-
-    # 지역 종류
-    elif st.session_state.my_data == '서울':
-        st.switch_page("pages/map_page.py")
-    else:
-        with col3:
-            st.write("다시 입력해주세요")  
+    for car in car_info:
+       if car['title'].lower() in st.session_state.my_data.lower():
+           st.switch_page("pages/best_page.py")
+       elif car['brand_name'].lower() in st.session_state.my_data.lower():
+           st.switch_page("pages/brand_page.py")
+    numbers = ''.join(c for c in st.session_state.my_data if c.isdigit())
+    if numbers:  
+        st.switch_page("pages/price_page.py")
+    with col3:
+        st.write("다시 입력해주세요")  
 
 
 # 생성 페이지 내용
@@ -73,6 +38,12 @@ st.markdown("""
     .stButton button {
         height: 42px;
     }
+            
+    .centered-image {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -89,12 +60,18 @@ st.markdown(
 
 # Enter 키 입력시 실행할 동작
 
+car_img = Image.open('electronic_car.jpg')
+col_img1, col_img2, col_img3 = st.columns([2, 1, 2])
+with col_img2:
+    st.image(car_img, use_container_width=True)
+
 col1, col2 = st.columns([3, 1])
-col3, col4 = st.columns([1, 2])
+col3, col4 = st.columns([1, 1])
 col5, col6, col7 = st.columns([1, 1, 1])
 col8 = st.columns(1)
 
 # header 밑으로 페이지를 보여준다.
+car_img = Image.open('electronic_car.jpg')
 
 with col1:
     st.session_state.my_data = st.text_input("", placeholder="원하는 전기차를 입력해주세요.")
@@ -118,4 +95,3 @@ with col7:
 with col8[0]:
     if st.button(f'FAQ', use_container_width=True):
             st.switch_page("pages/FAQ_page.py")
-

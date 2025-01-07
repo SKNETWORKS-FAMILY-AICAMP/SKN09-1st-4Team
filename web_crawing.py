@@ -3,6 +3,7 @@ import urllib.request
 import mysql.connector
 import xml.etree.ElementTree as ET
 import math
+import json
 from collections import Counter
 
 # API 키와 기본 URL 설정
@@ -56,11 +57,10 @@ for page in range(1, pages_needed + 1):
    for row in rows:
        automb_nm = row.find('AUTOMB_NM').text if row.find('AUTOMB_NM') is not None else None
        if automb_nm:
-           car_names.append(automb_nm)
-
+            normalized_name = ''.join(automb_nm.split())  # 모든 공백 제거
+            car_names.append(normalized_name)
 # Counter로 빈도수 계산
 car_counts = Counter(car_names)
-top_50_cars = car_counts.most_common(50)
 
 # sql 
 
@@ -69,14 +69,47 @@ connection = mysql.connector.connect(
     host="localhost",
     user="root",
     password="1234",
-    database="price"
+    database="car_data"
 )
 
 cursor = connection.cursor()
 
+with open('electric_cars_.json', 'r', encoding='utf-8') as f:
+    car_prices = json.load(f)
+
+
+# 기존 테이블 삭제 (있다면)
+cursor.execute("DROP TABLE IF EXISTS car_info")
+
+# 새로운 테이블 생성
+create_table_sql = """
+CREATE TABLE car_info (
+   car_id INT AUTO_INCREMENT PRIMARY KEY,
+   car_name VARCHAR(255),
+   brand_name VARCHAR(255),
+   price VARCHAR(255),
+   count INT
+)
+"""
+
+cursor.execute(create_table_sql)
+
+car_json_mix = []
+for car in car_prices:
+
+    count = car_counts.get(car['title'], 0)
+
+    car_json_mix.append((
+        car['title'],
+        car['brand_name'],
+        car['price'],
+        count
+    ))
+
+
 # 데이터 삽입
-sql = "INSERT INTO car_n (AUTOMB_NM, cnt) VALUES (%s, %s)"
-cursor.executemany(sql, top_50_cars)
+sql = "INSERT INTO car_info (car_name, brand_name, price, count) VALUES (%s, %s, %s, %s)"
+cursor.executemany(sql, car_json_mix)
 
 connection.commit()
 cursor.close()
