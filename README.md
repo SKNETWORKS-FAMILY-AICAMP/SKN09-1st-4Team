@@ -158,8 +158,8 @@
 <td><img src="https://img.shields.io/badge/Git-F05032?style=flat&logo=Git&logoColor=white"/></td>
 <td><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></td>
 </tr>
-
 </table>
+<br>
 
 > <span style="color:cyan"> Streamlit </span>
 > 
@@ -171,6 +171,7 @@
 <td><img src="https://img.shields.io/badge/-Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white"/></td>
 </tr>
 </table>
+<br>
 
 > <span style="color:cyan"> Data Server </span>
 > 
@@ -186,59 +187,68 @@
 <td><img src="https://img.shields.io/badge/mysql-4479A1?style=flat&logo=mysql&logoColor=white"/></td>
 </tr>
 </table>
-
-<img src=”images/dataframe.png”>
 <br><br><br>
 
 # 3. WBS
-
 <div>
-<img src=”images/WBS.png”>
-</div><br><br>
+<img src="images/WBS.png"; alt="WBS"/>
+</div>
+<br><br><br>
+
+### Data Frame
+<div>
+<img src="images/dataframe.png"; alt="dataframe"/>
+</div>
+<br><br><br>
 
 # 4. 요구사항 명세서
 
 <div>
-<img src=”images/notice.png”>
-</div><br><br>
+<img src="images/notice.png"; alt="요구사항 명세서"/>
+</div>
+<br><br><br>
 
 # 5. ERD
 
 <div>
 <img src="images/1st_team_ERD.png"; alt="ERD"/>
-</div><br><br>
+</div><br><br><br>
 
 # 6. 수행결과(시연 페이지)
 
 ### Main Page
-
-<img src=”images/main_page.png”>
-
-<br>
+<div>
+<img src="images/main_page.png"; alt="main page"/>
+</div>
+<br><br><br>
 
 ### Search
 
 User1: “4000만원대 이상의 차를 보여줘”
+<div>
+<img src="images/price_page.png"; alt="price page"/>
+</div>
 
-<img src=”images/price_page.png”>
-
-<br>
+<br><br>
 
 User2: “현대 전기 자동차 종류는 뭐가 있어?”
+<div>
+<img src="images/brand_page.png"; alt="brand page"/>
+</div>
 
-<img src=”images/brand_page.png”>
-
-<br>
+<br><br>
 
 User3: “아이오닉5는 잘 팔리나?”
+<div>
+<img src="images/best_page.png"; alt="best page"/>
+</div>
 
-<img src=”images/best_page.png”>
-
-<br>
+<br><br>
 
 ### FAQ Page
-
-<img src=”images/FAQ_page.png”>
+<div>
+<img src="images/FAQ_page.png"; alt="FAQ page"/>
+</div>
 
 <br><br><br>
 
