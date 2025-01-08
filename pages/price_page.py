@@ -12,6 +12,19 @@ db_config = {
     "database": "car_data"  # 사용할 데이터베이스 이름
 }
 
+
+st.markdown(
+    """
+    <style>
+    .stText, .stMarkdown {
+        text-align: left;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+
 st.title("💵💰 전기차 가격 조회 💰💵")
 st.write("전기차 새 차 가격 바로 알아보기")
 
@@ -60,7 +73,7 @@ data = fetch_data_from_mysql(val1, val2)
 if data:
     st.table(data)  # 테이블 형태로 데이터 출력
 else:
-    st.warning("아직 불러온 데이터가 없습니다.")
+    st.warning("데이터가 없습니다.")
 
 
 # 메인으로 되돌아가기 버튼
