@@ -5,8 +5,8 @@ import pandas as pd
 # sql 데이터베이스 연결 설정
 connection = mysql.connector.connect(
     host="localhost",
-    user="test",
-    password="test",
+    user="root",
+    password="1234",
     database="car_data"
 )
 

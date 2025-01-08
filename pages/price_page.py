@@ -8,7 +8,7 @@ db_config = {
     "host": "127.0.0.1",  # MySQL 서버 주소
     "port": 3306,
     "user": "root",       # MySQL 사용자 이름
-    "password": "7276",   # MySQL 비밀번호
+    "password": "1234",   # MySQL 비밀번호
     "database": "car_data"  # 사용할 데이터베이스 이름
 }
 
