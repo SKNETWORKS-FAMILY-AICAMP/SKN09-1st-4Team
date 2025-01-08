@@ -1,9 +1,8 @@
 import streamlit as st
 import json
-from PIL import Image
 
 
-with open('electric_cars_.json', 'r', encoding='utf-8') as f:
+with open('electric_cars.json', 'r', encoding='utf-8') as f:
     car_info = json.load(f)
 
 # 전기차 예외처리
@@ -38,12 +37,6 @@ st.markdown("""
     .stButton button {
         height: 42px;
     }
-            
-    .centered-image {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 2rem;
-    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -60,19 +53,12 @@ st.markdown(
 
 # Enter 키 입력시 실행할 동작
 
-car_img = Image.open('electronic_car.jpg')
-col_img1, col_img2, col_img3 = st.columns([2, 1, 2])
-with col_img2:
-    st.image(car_img, use_container_width=True)
-
 col1, col2 = st.columns([3, 1])
 col3, col4 = st.columns([1, 1])
 col5, col6, col7 = st.columns([1, 1, 1])
 col8 = st.columns(1)
 
 # header 밑으로 페이지를 보여준다.
-car_img = Image.open('electronic_car.jpg')
-
 with col1:
     st.session_state.my_data = st.text_input("", placeholder="원하는 전기차를 입력해주세요.")
 

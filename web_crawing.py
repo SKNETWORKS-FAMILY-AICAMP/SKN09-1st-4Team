@@ -74,7 +74,7 @@ connection = mysql.connector.connect(
 
 cursor = connection.cursor()
 
-with open('electric_cars_.json', 'r', encoding='utf-8') as f:
+with open('electric_cars.json', 'r', encoding='utf-8') as f:
     car_prices = json.load(f)
 
 
