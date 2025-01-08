@@ -28,7 +28,7 @@ st.markdown(
 st.title("💵💰 전기차 가격 조회 💰💵")
 st.write("전기차 새 차 가격 바로 알아보기")
 
-values = st.slider("찾으실 차량의 가격범위를 설정해주세요(단위: 만원)", 0, 30000, (1000, 3000))
+values = st.slider("찾으실 차량의 가격범위를 설정해주세요(단위: 만원)", 0, 30000, (1000, 30000))
 st.write("가격 설정:", values)
 val1 = values[0]
 val2 = values[1]
@@ -62,11 +62,6 @@ def fetch_data_from_mysql(val1, val2):
             cursor.close()
             connection.close()
 
-
-
-
-
-
 # MySQL 데이터 출력
 st.write("### 저장된 전기차 가격표(단위: 만원)")
 data = fetch_data_from_mysql(val1, val2)
@@ -78,4 +73,4 @@ else:
 
 # 메인으로 되돌아가기 버튼
 if st.button("메인으로"):
-    st.switch_page("project.py")
+    st.switch_page("main_page.py")

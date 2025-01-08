@@ -89,4 +89,4 @@ st.dataframe(filtered_data, use_container_width=True)
 # 메인으로 되돌아가기 버튼
 st.divider()
 if st.button(f'메인으로'):
-    st.switch_page("project.py")
+    st.switch_page("main_page.py")
