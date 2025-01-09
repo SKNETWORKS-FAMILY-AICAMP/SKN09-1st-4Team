@@ -190,10 +190,10 @@
 </div>
 <br><br><br>
 
-### Data Frame
+<!-- ### Data Frame
 <div>
 <img src="images/dataframe.png"; alt="dataframe"/>
-</div>
+</div> -->
 <br><br><br>
 
 # 4. 요구사항 명세서
