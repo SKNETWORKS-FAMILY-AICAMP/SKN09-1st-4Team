@@ -178,11 +178,6 @@
 
 <table>
 <tr>
-<td>VScode</td>
-<td><img src="https://img.shields.io/badge/python-3776AB?style=flat&logo=python&logoColor=white"/></td>
-</tr>
-
-<tr>
 <td>RDBMS</td>
 <td><img src="https://img.shields.io/badge/mysql-4479A1?style=flat&logo=mysql&logoColor=white"/></td>
 </tr>
